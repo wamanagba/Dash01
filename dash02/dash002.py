@@ -8,7 +8,7 @@ import leafmap.foliumap as leafmap
 
 st.set_page_config(page_title='Dashboard', layout='wide')
 
-st.title('My first Dashboard with Python')
+st.title('My first Dashboard')
 
 st.sidebar.title('About')
 st.sidebar.info('Explore the Highway Statistics')
