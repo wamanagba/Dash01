@@ -1,7 +1,7 @@
 import xarray as xr
 import pandas as pd
 import os
-
+from tabulate import tabulate
 
 Month="Aug"
 Month_name="August"
@@ -43,12 +43,14 @@ csv_file_out = csv_dir + netcdf_file_name[:-3] + '.csv'
 print(csv_file_out)
 
 ds = xr.open_dataset(netcdf_file_in)
+ds = ds.rename({'X': 'lon', 'Y': 'lat'})
+
 df = ds.to_dataframe()
 df.to_csv(csv_file_out)
 
-ds
+#print(tabulate(df, headers='keys'))
 
 
-
+print(df)
 
 
